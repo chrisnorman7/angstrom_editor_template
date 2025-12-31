@@ -1,0 +1,54 @@
+name: angstrom_editor_template
+version: 1.0.0+1
+description: "A template angstrom game."
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
+
+environment:
+  sdk: ^3.11.0-200.1.beta
+
+dependencies:
+  cupertino_icons: ^1.0.8
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+  package_rename: ^1.10.1
+package_rename_config:
+  android:
+    app_name: Angstrom Template
+    package_name: angstrom_editor_template
+    override_old_package: com.example.example
+    lang: kotlin
+
+  ios:
+    app_name: Angstrom Template
+    bundle_name: angstrom_editor_demo
+    package_name: com.example.angstrom_editor_demo
+
+  web:
+    app_name: Angstrom Template
+    description: A template game for angstrom_editor.
+
+  linux:
+    app_name: Angstrom Template
+    package_name: com.example.angstrom_editor_template
+    exe_name: template
+
+  windows:
+    app_name: Angstrom Template
+    organization: example
+    copyright_notice: Copyright ©️ forever Example Company. All rights reserved.
+    exe_name: template
+
+  macos:
+    app_name: Angstrom Template
+    package_name: com.example.angstrom_editor_demo
+    copyright_notice: Copyright ©️ forever Example Company. All rights reserved.
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
