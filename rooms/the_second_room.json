@@ -125,7 +125,10 @@
       "name": "Door",
       "x": 0,
       "y": 0,
-      "ambiance": null,
+      "ambiance": {
+        "path": "sounds/ambiance/second_room_door.mp3",
+        "volume": 0.7
+      },
       "ambianceMaxDistance": 20,
       "eventCommands": {
         "onActivate": {
@@ -154,5 +157,5 @@
   "music": null,
   "x": 0,
   "y": 0,
-  "lastPageIndex": 1
+  "lastPageIndex": 2
 }

@@ -20,11 +20,25 @@ class $SoundsAmbiance extends _i1.SoundDirectory {
     name: 'sounds/ambiance/ambiance.mp3',
   );
 
+  /// sounds/ambiance/first_room_door.mp3.
+  _i1.DriftSoundReference get firstRoomDoor => _i1.DriftSoundReference(
+    database: db,
+    id: 2,
+    name: 'sounds/ambiance/first_room_door.mp3',
+  );
+
   /// sounds/ambiance/intro.wav.
   _i1.DriftSoundReference get intro => _i1.DriftSoundReference(
     database: db,
-    id: 2,
+    id: 3,
     name: 'sounds/ambiance/intro.wav',
+  );
+
+  /// sounds/ambiance/second_room_door.mp3.
+  _i1.DriftSoundReference get secondRoomDoor => _i1.DriftSoundReference(
+    database: db,
+    id: 4,
+    name: 'sounds/ambiance/second_room_door.mp3',
   );
 
   /// The name of the directory where the [sounds] were loaded from.
@@ -37,7 +51,12 @@ class $SoundsAmbiance extends _i1.SoundDirectory {
 
   /// Return a list of all sound references.
   @override
-  List<_i1.DriftSoundReference> get sounds => [ambiance, intro];
+  List<_i1.DriftSoundReference> get sounds => [
+    ambiance,
+    firstRoomDoor,
+    intro,
+    secondRoomDoor,
+  ];
 }
 
 ///Directory: sounds\build.
@@ -52,14 +71,14 @@ class $SoundsBuild extends _i1.SoundDirectory {
   /// sounds/build/build_complete.mp3.
   _i1.DriftSoundReference get buildComplete => _i1.DriftSoundReference(
     database: db,
-    id: 3,
+    id: 5,
     name: 'sounds/build/build_complete.mp3',
   );
 
   /// sounds/build/build_failed.mp3.
   _i1.DriftSoundReference get buildFailed => _i1.DriftSoundReference(
     database: db,
-    id: 4,
+    id: 6,
     name: 'sounds/build/build_failed.mp3',
   );
 
@@ -88,28 +107,28 @@ class $SoundsDoors extends _i1.SoundDirectory {
   /// sounds/doors/door_close_1.mp3.
   _i1.DriftSoundReference get doorClose1 => _i1.DriftSoundReference(
     database: db,
-    id: 5,
+    id: 7,
     name: 'sounds/doors/door_close_1.mp3',
   );
 
   /// sounds/doors/door_close_2.mp3.
   _i1.DriftSoundReference get doorClose2 => _i1.DriftSoundReference(
     database: db,
-    id: 6,
+    id: 8,
     name: 'sounds/doors/door_close_2.mp3',
   );
 
   /// sounds/doors/door_open_1.mp3.
   _i1.DriftSoundReference get doorOpen1 => _i1.DriftSoundReference(
     database: db,
-    id: 7,
+    id: 9,
     name: 'sounds/doors/door_open_1.mp3',
   );
 
   /// sounds/doors/door_open_2.mp3.
   _i1.DriftSoundReference get doorOpen2 => _i1.DriftSoundReference(
     database: db,
-    id: 8,
+    id: 10,
     name: 'sounds/doors/door_open_2.mp3',
   );
 
@@ -143,35 +162,35 @@ class $SoundsFootstepsWoodenFloor extends _i1.SoundDirectory {
   /// sounds/footsteps/wooden_floor/step_1.wav.
   _i1.DriftSoundReference get step1 => _i1.DriftSoundReference(
     database: db,
-    id: 9,
+    id: 11,
     name: 'sounds/footsteps/wooden_floor/step_1.wav',
   );
 
   /// sounds/footsteps/wooden_floor/step_2.wav.
   _i1.DriftSoundReference get step2 => _i1.DriftSoundReference(
     database: db,
-    id: 10,
+    id: 12,
     name: 'sounds/footsteps/wooden_floor/step_2.wav',
   );
 
   /// sounds/footsteps/wooden_floor/step_3.wav.
   _i1.DriftSoundReference get step3 => _i1.DriftSoundReference(
     database: db,
-    id: 11,
+    id: 13,
     name: 'sounds/footsteps/wooden_floor/step_3.wav',
   );
 
   /// sounds/footsteps/wooden_floor/step_4.wav.
   _i1.DriftSoundReference get step4 => _i1.DriftSoundReference(
     database: db,
-    id: 12,
+    id: 14,
     name: 'sounds/footsteps/wooden_floor/step_4.wav',
   );
 
   /// sounds/footsteps/wooden_floor/step_5.wav.
   _i1.DriftSoundReference get step5 => _i1.DriftSoundReference(
     database: db,
-    id: 13,
+    id: 15,
     name: 'sounds/footsteps/wooden_floor/step_5.wav',
   );
 
@@ -232,14 +251,14 @@ class $SoundsMenu extends _i1.SoundDirectory {
   /// sounds/menu/activate.mp3.
   _i1.DriftSoundReference get activate => _i1.DriftSoundReference(
     database: db,
-    id: 14,
+    id: 16,
     name: 'sounds/menu/activate.mp3',
   );
 
   /// sounds/menu/select.mp3.
   _i1.DriftSoundReference get select => _i1.DriftSoundReference(
     database: db,
-    id: 15,
+    id: 17,
     name: 'sounds/menu/select.mp3',
   );
 
@@ -268,7 +287,7 @@ class $SoundsMusic extends _i1.SoundDirectory {
   /// sounds/music/main_theme.mp3.
   _i1.DriftSoundReference get mainTheme => _i1.DriftSoundReference(
     database: db,
-    id: 16,
+    id: 18,
     name: 'sounds/music/main_theme.mp3',
   );
 

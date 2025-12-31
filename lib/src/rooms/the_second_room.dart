@@ -50,6 +50,15 @@ abstract class TheSecondRoomDoorBase {
   @_i3.nonVirtual
   _i1.Point<int> get startCoordinates => const _i1.Point(0, 0);
 
+  /// The ambiance for this object.
+  @_i3.nonVirtual
+  _i2.SoundReference get ambiance =>
+      const _i2.SoundReference(path: 'sounds/ambiance/second_room_door.mp3');
+
+  /// The max distance at which the [ambiance] will play for this object.
+  @_i3.nonVirtual
+  int get ambianceMaxDistance => 20;
+
   /// Use the door.
   void onActivateCommand(_i2.AngstromEngine engine) {
     _i2.Door(
