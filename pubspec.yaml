@@ -11,7 +11,7 @@ dependencies:
   angstrom_editor: ^0.7.0
   backstreets_widgets: ^0.41.1
   cupertino_icons: ^1.0.8
-  drift_sounds_database: ^0.0.1
+  drift_sounds: ^0.0.1
   flutter:
     sdk: flutter
   flutter_audio_games: ^0.51.7
