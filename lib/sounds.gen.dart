@@ -40,6 +40,42 @@ class $SoundsAmbiance extends _i1.SoundDirectory {
   List<_i1.DriftSoundReference> get sounds => [ambiance, intro];
 }
 
+///Directory: sounds\build.
+class $SoundsBuild extends _i1.SoundDirectory {
+  /// Create an instance.
+  const $SoundsBuild({required this.db});
+
+  /// The database where [sounds] are stored.
+  @override
+  final _i1.DriftSoundsDatabase db;
+
+  /// sounds/build/build_complete.mp3.
+  _i1.DriftSoundReference get buildComplete => _i1.DriftSoundReference(
+    database: db,
+    id: 3,
+    name: 'sounds/build/build_complete.mp3',
+  );
+
+  /// sounds/build/build_failed.mp3.
+  _i1.DriftSoundReference get buildFailed => _i1.DriftSoundReference(
+    database: db,
+    id: 4,
+    name: 'sounds/build/build_failed.mp3',
+  );
+
+  /// The name of the directory where the [sounds] were loaded from.
+  @override
+  String get name => 'sounds/build';
+
+  /// The directories which appear below this one.
+  @override
+  List<_i1.SoundDirectory> get subdirectories => [];
+
+  /// Return a list of all sound references.
+  @override
+  List<_i1.DriftSoundReference> get sounds => [buildComplete, buildFailed];
+}
+
 ///Directory: sounds\doors.
 class $SoundsDoors extends _i1.SoundDirectory {
   /// Create an instance.
@@ -52,28 +88,28 @@ class $SoundsDoors extends _i1.SoundDirectory {
   /// sounds/doors/door_close_1.mp3.
   _i1.DriftSoundReference get doorClose1 => _i1.DriftSoundReference(
     database: db,
-    id: 3,
+    id: 5,
     name: 'sounds/doors/door_close_1.mp3',
   );
 
   /// sounds/doors/door_close_2.mp3.
   _i1.DriftSoundReference get doorClose2 => _i1.DriftSoundReference(
     database: db,
-    id: 4,
+    id: 6,
     name: 'sounds/doors/door_close_2.mp3',
   );
 
   /// sounds/doors/door_open_1.mp3.
   _i1.DriftSoundReference get doorOpen1 => _i1.DriftSoundReference(
     database: db,
-    id: 5,
+    id: 7,
     name: 'sounds/doors/door_open_1.mp3',
   );
 
   /// sounds/doors/door_open_2.mp3.
   _i1.DriftSoundReference get doorOpen2 => _i1.DriftSoundReference(
     database: db,
-    id: 6,
+    id: 8,
     name: 'sounds/doors/door_open_2.mp3',
   );
 
@@ -107,35 +143,35 @@ class $SoundsFootstepsWoodenFloor extends _i1.SoundDirectory {
   /// sounds/footsteps/wooden_floor/step_1.wav.
   _i1.DriftSoundReference get step1 => _i1.DriftSoundReference(
     database: db,
-    id: 7,
+    id: 9,
     name: 'sounds/footsteps/wooden_floor/step_1.wav',
   );
 
   /// sounds/footsteps/wooden_floor/step_2.wav.
   _i1.DriftSoundReference get step2 => _i1.DriftSoundReference(
     database: db,
-    id: 8,
+    id: 10,
     name: 'sounds/footsteps/wooden_floor/step_2.wav',
   );
 
   /// sounds/footsteps/wooden_floor/step_3.wav.
   _i1.DriftSoundReference get step3 => _i1.DriftSoundReference(
     database: db,
-    id: 9,
+    id: 11,
     name: 'sounds/footsteps/wooden_floor/step_3.wav',
   );
 
   /// sounds/footsteps/wooden_floor/step_4.wav.
   _i1.DriftSoundReference get step4 => _i1.DriftSoundReference(
     database: db,
-    id: 10,
+    id: 12,
     name: 'sounds/footsteps/wooden_floor/step_4.wav',
   );
 
   /// sounds/footsteps/wooden_floor/step_5.wav.
   _i1.DriftSoundReference get step5 => _i1.DriftSoundReference(
     database: db,
-    id: 11,
+    id: 13,
     name: 'sounds/footsteps/wooden_floor/step_5.wav',
   );
 
@@ -184,6 +220,71 @@ class $SoundsFootsteps extends _i1.SoundDirectory {
   List<_i1.DriftSoundReference> get sounds => [];
 }
 
+///Directory: sounds\menu.
+class $SoundsMenu extends _i1.SoundDirectory {
+  /// Create an instance.
+  const $SoundsMenu({required this.db});
+
+  /// The database where [sounds] are stored.
+  @override
+  final _i1.DriftSoundsDatabase db;
+
+  /// sounds/menu/activate.mp3.
+  _i1.DriftSoundReference get activate => _i1.DriftSoundReference(
+    database: db,
+    id: 14,
+    name: 'sounds/menu/activate.mp3',
+  );
+
+  /// sounds/menu/select.mp3.
+  _i1.DriftSoundReference get select => _i1.DriftSoundReference(
+    database: db,
+    id: 15,
+    name: 'sounds/menu/select.mp3',
+  );
+
+  /// The name of the directory where the [sounds] were loaded from.
+  @override
+  String get name => 'sounds/menu';
+
+  /// The directories which appear below this one.
+  @override
+  List<_i1.SoundDirectory> get subdirectories => [];
+
+  /// Return a list of all sound references.
+  @override
+  List<_i1.DriftSoundReference> get sounds => [activate, select];
+}
+
+///Directory: sounds\music.
+class $SoundsMusic extends _i1.SoundDirectory {
+  /// Create an instance.
+  const $SoundsMusic({required this.db});
+
+  /// The database where [sounds] are stored.
+  @override
+  final _i1.DriftSoundsDatabase db;
+
+  /// sounds/music/main_theme.mp3.
+  _i1.DriftSoundReference get mainTheme => _i1.DriftSoundReference(
+    database: db,
+    id: 16,
+    name: 'sounds/music/main_theme.mp3',
+  );
+
+  /// The name of the directory where the [sounds] were loaded from.
+  @override
+  String get name => 'sounds/music';
+
+  /// The directories which appear below this one.
+  @override
+  List<_i1.SoundDirectory> get subdirectories => [];
+
+  /// Return a list of all sound references.
+  @override
+  List<_i1.DriftSoundReference> get sounds => [mainTheme];
+}
+
 /// A class representing sounds in a directory.
 ///
 /// This class was generated by [drift_sounds_cli](https://github.com/chrisnorman7/drift_sounds_cli).
@@ -200,6 +301,9 @@ class Sounds extends _i1.SoundDirectory {
   ///Directory: sounds\ambiance.
   $SoundsAmbiance get ambiance => $SoundsAmbiance(db: db);
 
+  ///Directory: sounds\build.
+  $SoundsBuild get build => $SoundsBuild(db: db);
+
   ///Directory: sounds\doors.
   $SoundsDoors get doors => $SoundsDoors(db: db);
 
@@ -210,6 +314,12 @@ class Sounds extends _i1.SoundDirectory {
   ///Directory: sounds\footsteps.
   $SoundsFootsteps get footsteps => $SoundsFootsteps(db: db);
 
+  ///Directory: sounds\menu.
+  $SoundsMenu get menu => $SoundsMenu(db: db);
+
+  ///Directory: sounds\music.
+  $SoundsMusic get music => $SoundsMusic(db: db);
+
   /// The name of the directory where the [sounds] were loaded from.
   @override
   String get name => 'sounds';
@@ -218,9 +328,12 @@ class Sounds extends _i1.SoundDirectory {
   @override
   List<_i1.SoundDirectory> get subdirectories => [
     ambiance,
+    build,
     doors,
     woodenFloor,
     footsteps,
+    menu,
+    music,
   ];
 
   /// Return a list of all sound references.

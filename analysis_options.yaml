@@ -8,7 +8,9 @@ analyzer:
   plugins:
     - custom_lint
   exclude:
+    - lib/src/custom_engine.dart
     - lib/src/json/**.g.dart
+    - lib/src/rooms/**.dart
 linter:
   rules:
     - always_declare_return_types

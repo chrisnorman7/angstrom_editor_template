@@ -8,7 +8,7 @@ environment:
 
 dependencies:
   angstrom: ^0.2.8
-  angstrom_editor: ^0.7.0
+  angstrom_editor: ^0.7.2
   backstreets_widgets: ^0.41.1
   cupertino_icons: ^1.0.8
   drift_sounds: ^0.0.1
@@ -61,3 +61,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - rooms/

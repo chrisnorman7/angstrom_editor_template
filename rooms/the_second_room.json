@@ -1,0 +1,158 @@
+{
+  "surfaces": [
+    {
+      "id": "019b7452-43e1-73c6-a389-27feebd72187",
+      "name": "Floor",
+      "points": [
+        {
+          "x": 0,
+          "y": 0
+        },
+        {
+          "x": 0,
+          "y": 1
+        },
+        {
+          "x": 0,
+          "y": 2
+        },
+        {
+          "x": 0,
+          "y": 3
+        },
+        {
+          "x": 0,
+          "y": 4
+        },
+        {
+          "x": 1,
+          "y": 0
+        },
+        {
+          "x": 1,
+          "y": 1
+        },
+        {
+          "x": 1,
+          "y": 2
+        },
+        {
+          "x": 1,
+          "y": 3
+        },
+        {
+          "x": 1,
+          "y": 4
+        },
+        {
+          "x": 2,
+          "y": 0
+        },
+        {
+          "x": 2,
+          "y": 1
+        },
+        {
+          "x": 2,
+          "y": 2
+        },
+        {
+          "x": 2,
+          "y": 3
+        },
+        {
+          "x": 2,
+          "y": 4
+        },
+        {
+          "x": 3,
+          "y": 0
+        },
+        {
+          "x": 3,
+          "y": 1
+        },
+        {
+          "x": 3,
+          "y": 2
+        },
+        {
+          "x": 3,
+          "y": 3
+        },
+        {
+          "x": 3,
+          "y": 4
+        },
+        {
+          "x": 4,
+          "y": 0
+        },
+        {
+          "x": 4,
+          "y": 1
+        },
+        {
+          "x": 4,
+          "y": 2
+        },
+        {
+          "x": 4,
+          "y": 3
+        },
+        {
+          "x": 4,
+          "y": 4
+        }
+      ],
+      "contactSounds": [
+        "sounds/footsteps/wooden_floor/step_1.wav",
+        "sounds/footsteps/wooden_floor/step_2.wav",
+        "sounds/footsteps/wooden_floor/step_3.wav",
+        "sounds/footsteps/wooden_floor/step_4.wav",
+        "sounds/footsteps/wooden_floor/step_5.wav"
+      ],
+      "eventCommands": {},
+      "contactSoundsVolume": 0.7,
+      "isWall": false,
+      "moveInterval": 500000,
+      "ambiance": null
+    }
+  ],
+  "objects": [
+    {
+      "id": "019b7453-9bac-7027-821e-d9244cb6df14",
+      "name": "Door",
+      "x": 0,
+      "y": 0,
+      "ambiance": null,
+      "ambianceMaxDistance": 20,
+      "eventCommands": {
+        "onActivate": {
+          "comment": "Use the door.",
+          "spokenText": null,
+          "interfaceSound": null,
+          "hasHandler": false,
+          "door": {
+            "targetObjectId": "019b7454-3a05-70dd-b4c7-ea17752ca0f6",
+            "x": 9,
+            "y": 9,
+            "targetRoomId": "rooms/the_first_room.json",
+            "useSound": {
+              "path": "sounds/doors/door_close_1.mp3",
+              "volume": 0.7
+            },
+            "stopPlayer": false
+          },
+          "engineCommandId": null
+        }
+      }
+    }
+  ],
+  "eventCommands": {},
+  "name": "The Second Room",
+  "music": null,
+  "x": 0,
+  "y": 0,
+  "lastPageIndex": 1
+}

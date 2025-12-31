@@ -1,11 +1,10 @@
-import 'package:angstrom_editor_template/sounds.gen.dart';
+import 'package:angstrom_editor_template/src/screens/main_menu.dart';
+import 'package:angstrom_editor_template/src/screens/splash_screen.dart';
 import 'package:backstreets_widgets/screens.dart';
 import 'package:backstreets_widgets/widgets.dart';
-import 'package:drift_sounds/drift_sounds.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_audio_games/flutter_audio_games.dart';
 import 'package:flutter_soloud/flutter_soloud.dart';
 
 /// The home screen of the app.
@@ -52,11 +51,9 @@ class HomePageState extends State<HomePage> {
         ),
       );
     }
-    final sounds = context.sounds;
-    context.playSound(sounds.ambiance.intro.sound(destroy: true));
-    return const SimpleScaffold(
-      title: 'Hello',
-      body: CenterText(text: 'World', autofocus: true),
+    return TimedBuilders(
+      duration: const Duration(seconds: 3),
+      builders: [(_) => const SplashScreen(), (_) => const MainMenu()],
     );
   }
 }
