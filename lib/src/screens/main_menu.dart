@@ -98,18 +98,39 @@ class MainMenuState extends State<MainMenu> {
           (final character) => AudioGameMenuItem(
             title: character.name,
             onActivate: (final innerContext) =>
-                innerContext.fadeMusicAndPushWidget(
-                  (_) => GameScreen(
-                    engine: CustomEngine(
-                      playerCharacter: character,
-                      assetBundle: DefaultAssetBundle.of(innerContext),
-                      theFirstRoom: const FirstRoom(),
-                      theSecondRoom: const SecondRoom(),
-                    ),
+                innerContext.fadeMusicAndPushWidget((_) {
+                  final assetBundle = DefaultAssetBundle.of(innerContext);
+                  final engine = CustomEngine(
+                    playerCharacter: character,
+                    assetBundle: assetBundle,
+                    theFirstRoom: const FirstRoom(),
+                    theSecondRoom: const SecondRoom(),
+                  );
+                  return GameScreen(
+                    engine: engine,
                     title: character.name,
                     getSound: _getSound,
-                  ),
-                ),
+                    gameShortcutsBuilder: (final context, final shortcuts) {
+                      shortcuts.add(
+                        GameShortcut(
+                          title: 'Save player',
+                          shortcut: GameShortcutsShortcut.f4,
+                          onStart: (final innerContext) async {
+                            final preferences = SharedPreferencesAsync();
+                            await preferences.setStringList(
+                              _playerCharactersKey,
+                              characters.map(jsonEncode).toList(),
+                            );
+                            if (mounted) {
+                              engine.speak('Player saved.');
+                            }
+                          },
+                        ),
+                      );
+                      return shortcuts;
+                    },
+                  );
+                }),
           ),
         ),
       ],
