@@ -5,9 +5,8 @@ import 'package:angstrom/angstrom.dart';
 import 'package:angstrom_editor/angstrom_editor.dart';
 import 'package:angstrom_editor_template/gen/assets.gen.dart';
 import 'package:angstrom_editor_template/sounds.gen.dart';
-import 'package:angstrom_editor_template/src/custom_engine.dart';
-import 'package:angstrom_editor_template/src/room_events/first_room.dart';
-import 'package:angstrom_editor_template/src/room_events/second_room.dart';
+import 'package:angstrom_editor_template/src/constants.dart';
+import 'package:angstrom_editor_template/src/screens/player_character_screen.dart';
 import 'package:backstreets_widgets/screens.dart';
 import 'package:backstreets_widgets/widgets.dart';
 import 'package:drift_sounds/drift_sounds.dart';
@@ -38,9 +37,6 @@ class MainMenuState extends State<MainMenu> {
 
   /// The sounds to play.
   late Sounds sounds;
-
-  /// The key for players.
-  static const String _playerCharactersKey = 'angstrom_editor_template_players';
 
   /// The players which have been loaded.
   List<PlayerCharacter>? _playerCharacters;
@@ -98,39 +94,20 @@ class MainMenuState extends State<MainMenu> {
           (final character) => AudioGameMenuItem(
             title: character.name,
             onActivate: (final innerContext) =>
-                innerContext.fadeMusicAndPushWidget((_) {
-                  final assetBundle = DefaultAssetBundle.of(innerContext);
-                  final engine = CustomEngine(
+                innerContext.fadeMusicAndPushWidget(
+                  (_) => PlayerCharacterScreen(
                     playerCharacter: character,
-                    assetBundle: assetBundle,
-                    theFirstRoom: const FirstRoom(),
-                    theSecondRoom: const SecondRoom(),
-                  );
-                  return GameScreen(
-                    engine: engine,
-                    title: character.name,
                     getSound: _getSound,
-                    gameShortcutsBuilder: (final context, final shortcuts) {
-                      shortcuts.add(
-                        GameShortcut(
-                          title: 'Save player',
-                          shortcut: GameShortcutsShortcut.f4,
-                          onStart: (final innerContext) async {
-                            final preferences = SharedPreferencesAsync();
-                            await preferences.setStringList(
-                              _playerCharactersKey,
-                              characters.map(jsonEncode).toList(),
-                            );
-                            if (mounted) {
-                              engine.speak('Player saved.');
-                            }
-                          },
-                        ),
+                    savePlayer: () async {
+                      final value = characters.map(jsonEncode).toList();
+                      final preferences = SharedPreferencesAsync();
+                      await preferences.setStringList(
+                        playerCharactersKey,
+                        value,
                       );
-                      return shortcuts;
                     },
-                  );
-                }),
+                  ),
+                ),
           ),
         ),
       ],
@@ -173,7 +150,7 @@ class MainMenuState extends State<MainMenu> {
   Future<void> _loadPlayerCharacters() async {
     final preferences = SharedPreferencesAsync();
     final strings =
-        (await preferences.getStringList(_playerCharactersKey)) ?? [];
+        (await preferences.getStringList(playerCharactersKey)) ?? [];
     final characters = strings
         .map(
           (final string) => PlayerCharacter.fromJson(
