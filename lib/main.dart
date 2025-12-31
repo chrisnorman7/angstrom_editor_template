@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_audio_games/flutter_audio_games.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,9 +12,11 @@ class MyApp extends StatelessWidget {
 
   /// Build the widget.
   @override
-  Widget build(final BuildContext context) => MaterialApp(
-    title: 'Angstrom Template',
-    theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-    home: const Placeholder(),
+  Widget build(final BuildContext context) => SoLoudScope(
+    child: MaterialApp(
+      title: 'Angstrom Template',
+      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
+      home: const Placeholder(),
+    ),
   );
 }
